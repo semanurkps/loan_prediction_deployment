@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deploy ML model using flask</title>
+</head>
+
+<body>
+ <div class="login">
+    <h1>Welcome to Loan Prediction Model!</h1>
+
+    <p> This model is created to predict if you qualify to get a certain amount of loan or not. <br>
+        If you want to get the best result,please refer to filling guidelines stated in placeholders.<br>
+        Have a nice day!
+     </p>
+
+
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Gender" placeholder="Gender (M,F)" required="required"/>
+        <input type="text" name="Married" placeholder="Marital Status (Y,N)" required="required" />
+        <input type="text" name="Dependents" placeholder="No. of Dependents (0,1,2,3+)" required="required" />
+    <br><br>   
+        <input type="text" name="Education" placeholder="Graduation Status (Y,N)" required="required" />
+        <input type="text" name="Self_Employed" placeholder="Self Employment (Y,N)" required="required" />
+        <input type="text" name="ApplicantIncome" placeholder="Income" required="required" />
+    <br><br>		
+        <input type="text" name="CoapplicantIncome" placeholder="Co-Applicant Income" required="required" />
+        <input type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
+        <input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term (in days)" required="required" />
+    <br><br> 
+        <input type="text" name="Credit_History" placeholder="Credit History (1- all debts paid, 0- not paid)" required="required" />
+        <input type="text" name="Property_Area" placeholder="Property Area (Rural, Semiurban, Urban)" required="required" />
+    <br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+
+   <br>
+   <br>
+   {{ output }}
+
+ </div>
+
+
+</body>
+</html>
