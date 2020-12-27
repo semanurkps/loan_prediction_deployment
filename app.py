@@ -29,7 +29,7 @@ def predict():
     features = [str(x) for x in request.form.values()]
 
     for i in range(len(features)):
-        if i in [0,1,2,3,4,11]:
+        if i in [0,1,2,3,4,10]:
             pass
         else:
             features[i]=float(features[i])
