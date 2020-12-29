@@ -10,26 +10,68 @@
     <h1>Welcome to Loan Prediction Model!</h1>
 
     <p> This model is created to predict if you qualify to get a certain amount of loan or not. <br>
-        If you want to get the best result,please refer to filling guidelines stated in placeholders.<br>
         Have a nice day!
      </p>
 
 
-    <form action="{{ url_for('predict')}}"method="post">
-        <input type="text" name="Gender" placeholder="Gender (M,F)" required="required"/>
-        <input type="text" name="Married" placeholder="Marital Status (Y,N)" required="required" />
-        <input type="text" name="Dependents" placeholder="No. of Dependents (0,1,2,3+)" required="required" />
+    <form action="{{ url_for('predict')}}"method="post">        
+        <label for="Gender">Gender </label>
+        <select id="Gender" name="Gender">
+             <option value="Male">Male</option>
+             <option value="Female">Female</option>
+        </select>
+    <br><br>
+        <label for="Married"> Are you married? </label>
+        <select id="Married" name="Married">
+             <option value="Yes">Yes</option>
+             <option value="No">No</option>
+        </select>
+    <br><br>
+        <label for="Dependents"> Select the no. of dependents </label>
+        <select id="Dependents" name="Dependents">
+             <option value="0">0</option>
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3+">3+</option>
+        </select>        
     <br><br>   
-        <input type="text" name="Education" placeholder="Graduation Status (Y,N)" required="required" />
-        <input type="text" name="Self_Employed" placeholder="Self Employment (Y,N)" required="required" />
+        <label for="Education"> Are you graduated? </label>
+        <select id="Education" name="Education">
+             <option value="Yes">Yes</option>
+             <option value="No">No</option>
+        </select>
+    <br><br>
+        <label for="Self_Employed"> Are you self-employed? </label>
+        <select id="Self_Employed" name="Self_Employed">
+             <option value="Yes">Yes</option>
+             <option value="No">No</option>
+        </select>
+    <br><br>
+        <label for="ApplicantIncome">Applicant Income</label>
         <input type="text" name="ApplicantIncome" placeholder="Income" required="required" />
-    <br><br>		
+    <br><br>
+        <label for="CoapplicantIncome">Co-Applicant Income</label>
         <input type="text" name="CoapplicantIncome" placeholder="Co-Applicant Income" required="required" />
+    <br><br>
+        <label for="LoanAmount">Loan Amount</label>
         <input type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
-        <input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term (in days)" required="required" />
+    <br><br>
+        <label for="Loan_Amount_Term">Loan Amount Term</label>
+        <input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term (days)" required="required" />
     <br><br> 
-        <input type="text" name="Credit_History" placeholder="Credit History (1- all debts paid, 0- not paid)" required="required" />
-        <input type="text" name="Property_Area" placeholder="Property Area (Rural, Semiurban, Urban)" required="required" />
+        <label for="Credit_History">Credit History</label>
+        <select id="Credit_History" name="Credit_History">
+            <option value="All debts paid">All debts paid</option>
+            <option value="Not paid">Not paid</option>
+       </select>
+   <br><br>
+   <label for="Property_Area">Property Area</label>
+   <select id="Property_Area" name="Property_Area">
+       <option value="Rural">Rural</option>
+       <option value="Semiurban">Semiurban</option>
+       <option value="Urban">Urban</option>
+  </select>
+
     <br><br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
     </form>
